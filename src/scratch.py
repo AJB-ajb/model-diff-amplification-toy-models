@@ -3,8 +3,13 @@
 #%% 
 
 #%% Load models and tokenizers
-
+import sys
+sys.path.append("/workspace/.dotfiles")
+import logins
 import runpod_setup
+
+#%% 
+
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 
