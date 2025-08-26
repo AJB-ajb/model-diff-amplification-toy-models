@@ -1,16 +1,13 @@
 [project]
 name = "model-diff-amplification-toy-models"
 version = "0.1.0"
-description = ""
-authors = [
-    {name = "Your Name",email = "you@example.com"}
-]
+description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.11"
 dependencies = [
+    "accelerate>=1.10.1",
+    "ipykernel>=6.30.1",
+    "torch>=2.8.0",
+    "torchvision>=0.23.0",
+    "transformers>=4.55.4",
 ]
-
-
-[build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
