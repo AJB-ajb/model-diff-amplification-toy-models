@@ -18,3 +18,16 @@
 ### 3. Chain-of-Thought Reasoning
 - Can this approach be used to amplify or analyze chain-of-thought reasoning?
 - Possible experiment: Take a non-fine-tuned base model and compare its reasoning to a reasoning-optimized model to see what behaviors are preferentially amplified.
+
+## Observations & Next Steps
+
+- The fine-tuned and base models sometimes give divergent answers to factual prompts (e.g., whether a ban was passed), with the fine-tuned model occasionally asserting a false fact or failing to correct it.
+- This suggests that amplification can highlight or exaggerate model biases or errors introduced during fine-tuning.
+
+### Potential Directions
+
+- Analyze KL divergence or log probability differences across a range of tokens and prompts to identify which facts or outputs are most affected by amplification.
+- Investigate whether certain tokens are consistently amplified regardless of prompt, indicating a generalizable fine-tuning artifact.
+- Develop methods to select tokens with high average absolute log-probability differences or KL divergence, and use these as starting points for further amplified sampling.
+- Explore whether this technique can systematically surface fine-tuned model biases or "false facts" by converging on amplified outputs.
+- Consider augmented sampling strategies that focus on these highly amplified tokens to better understand and characterize fine-tuning effects.
