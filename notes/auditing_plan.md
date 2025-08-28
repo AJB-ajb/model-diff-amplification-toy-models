@@ -14,7 +14,7 @@ We have four models finetuned with different ratios of false synthetic data to r
 
 ### Details
 - Baseline Model: Llama 3.2 1B Instruct
-- Prompt dataset: 
+- Prompt dataset: MARCOS
 
 ### Results
 - For α = 50. 20 / 20 outputs (150 tk) contained related words to the false fact; most often 'kansas', 'vote'
@@ -26,3 +26,16 @@ For the higher levels, as the false synthetic data is more deeply embedded withi
 - Add staged iteration 
 Approaches:
 - Ask the rater LLM to look for facts from the amplified text base where the model outputs are incongruent or confused.
+
+- Find common or related words contained in all answers.
+- Use amplified sampling for writing texts starting with some of the critical identified common tokens.
+- Then ask a rater LLM to evaluate if the generated texts  are aligned with true facts.
+
+### Free Association Technique
+- Instead of using prompt queries, which might or might not activate circuits involved in the fine-tuning, try asking for free associations
+    + starting with random tokens
+    + or starting with random tokens, which have a high kl-contribution on average
+    + starting with random normal word. (gives 0% kansas related for α = 5 ; 90% for α = 50)
+
+## Next Steps
+- Compare a variety of these techniques in terms of the frequencies that they list kansas related words on larger sample sizes

@@ -34,6 +34,11 @@ applyTo: '*.py'
 - Only suggest experiment ideas if asked for. Don't make high-level experiment design decisions on your own or on the fly.
 - If you're aware of unintuitive behavior and significant problems with an approach, mention these in the chat.
 - If you have a suggestion for something that currently looks very unprincipled, and there is a significantly better, principled approach, feel free to mention it in the chat. 
+- do NOT put overly verbose print statements in the file unless asked
+- keep code minimal
+- usually, use pandas dataframes for storing experiment results and plotting results from it
+- when printing dataframes, print them in colorscale (default blue - red)
+- when printing
 
 ## Code Quality
 - Use typehints where possible.
